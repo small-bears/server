@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="error" monitorInterval="5">
+
+    <properties>
+        <!-- 定义日志输出的普通格式 -->
+        <property name="pattern_n">%d{yyyy-MM-dd HH:mm:ss} [%t] [%-5level] %c %L - %m%n</property>
+    </properties>
+
+    <Appenders>
+        <!-- DEBUG 格式日志输出到控制台 -->
+        <Console name="console" target="SYSTEM_OUT">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${pattern_n}" />
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="console" />
+        </Root>
+    </Loggers>
+</Configuration>

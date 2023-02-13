@@ -1,0 +1,28 @@
+server:
+  port: 9999
+  servlet:
+    context-path: /teams
+spring:
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: UTF-8
+  mvc:
+    static-path-pattern: /**
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java #重启目录
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/self_student_teams?zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxWait: 60000
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

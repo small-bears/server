@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!--默认缓存策略 -->
+    <defaultCache maxElementsInMemory="10000" eternal="false"
+                  timeToIdleSeconds="120" timeToLiveSeconds="120"
+                  maxElementsOnDisk="10000" diskExpiryThreadIntervalSeconds="120"
+                  memoryStoreEvictionPolicy="LRU">
+        <persistence strategy="localTempSwap" />
+    </defaultCache>
+
+    <!-- 自定义缓存策略 -->
+    <cache name="users"
+           maxElementsInMemory="10000"
+           eternal="false"
+           timeToIdleSeconds="120000"
+           timeToLiveSeconds="12000"
+           maxElementsOnDisk="10000"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LRU">
+
+        <persistence strategy="localTempSwap" />
+    </cache>
+</ehcache>
